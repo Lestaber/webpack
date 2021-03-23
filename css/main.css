@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e7d2fd;
+}
+
+label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 14px;
+}
+
+strong {
+  margin-right: 20px;
+  color: #a90000;
+}
+
+p {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 100px;
+  text-align: center;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="date"] {
+  border-radius: 4px;
+  border: 1px solid;
+}
+
+button[data-setter] {
+  outline: none;
+  background: transparent;
+  border: none;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 24px;
+  width: 25px;
+  height: 30px;
+  color: #f7958e;
+  cursor: pointer;
+}
+
+button[data-setter]:hover {
+  opacity: 0.5;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 200px;
+}
+
+.btn {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background: -webkit-gradient(linear, right top, left top, from(#FE602D), color-stop(#2DFEA9), color-stop(#562DFE), color-stop(#AF2DFE), to(#FE2DDE));
+  background: linear-gradient(to left, #FE602D, #2DFEA9, #562DFE, #AF2DFE, #FE2DDE);
+  background-size: 400%;
+  text-align: center;
+  color: white;
+  line-height: 50px;
+  z-index: 2;
+  font-size: 16px;
+}
+
+.btn:hover {
+  -webkit-animation: anim 5s linear 0s infinite;
+          animation: anim 5s linear 0s infinite;
+}
+
+.btn:before {
+  content: '';
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, right top, left top, from(#FE602D), color-stop(#2DFEA9), color-stop(#562DFE), color-stop(#AF2DFE), to(#FE2DDE));
+  background: linear-gradient(to left, #FE602D, #2DFEA9, #562DFE, #AF2DFE, #FE2DDE);
+  background-size: 400%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  border-radius: 50px;
+  z-index: -1;
+}
+
+.btn:hover:before {
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  -webkit-animation: anim 5s linear 0s infinite;
+          animation: anim 5s linear 0s infinite;
+}
+
+@-webkit-keyframes anim {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: -400%;
+  }
+}
+
+@keyframes anim {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: -400%;
+  }
+}
+
+.calc__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 160px;
+  margin: 14px auto;
+  border-radius: 4px;
+  padding: 6px;
+  background: #F7958E;
+}
+
+.container {
+  position: relative;
+  top: 30px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.setters {
+  position: absolute;
+  left: 85px;
+  top: 75px;
+}
+
+.minutes-set {
+  float: left;
+  margin-right: 28px;
+}
+
+.seconds-set {
+  float: right;
+}
+
+.controlls {
+  position: absolute;
+  left: 75px;
+  top: 105px;
+  text-align: center;
+}
+
+.display-remain-time {
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 65px;
+  color: #F7958E;
+}
+
+#pause {
+  outline: none;
+  background: transparent;
+  border: none;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+#pause:hover {
+  opacity: 0.8;
+}
+
+.play::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 22px solid #F7958E;
+}
+
+.pause::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 15px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 1px;
+  border: 5px solid #F7958E;
+  border-top: none;
+  border-bottom: none;
+}
+
+.e-c-base {
+  fill: none;
+  stroke: #9c9a9a;
+  stroke-width: 4px;
+}
+
+.e-c-progress {
+  fill: none;
+  stroke: #F7958E;
+  stroke-width: 4px;
+  -webkit-transition: stroke-dashoffset 0.7s;
+  transition: stroke-dashoffset 0.7s;
+}
+
+.e-c-pointer {
+  fill: #FFF;
+  stroke: #F7958E;
+  stroke-width: 2px;
+}
+
+#e-pointer {
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+}
+
+.warning {
+  text-align: center;
+}
